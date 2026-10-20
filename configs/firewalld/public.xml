@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+  <short>Public</short>
+  <description>For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.</description>
+  <service name="http"/>
+  <rule family="ipv4">
+    <source address="192.0.2.0/24"/>
+    <service name="ssh"/>
+    <accept/>
+  </rule>
+  <forward/>
+</zone>

@@ -1,0 +1,3 @@
+$ sudo cat /etc/sudoers.d/deploy
+deploy ALL=(root) NOPASSWD: /usr/bin/systemctl reload nginx
+[exit code: 0]

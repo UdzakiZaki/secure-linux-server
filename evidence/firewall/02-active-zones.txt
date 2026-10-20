@@ -1,0 +1,4 @@
+$ sudo firewall-cmd --get-active-zones
+public (default)
+  interfaces: enp0s3 enp0s8
+[exit code: 0]

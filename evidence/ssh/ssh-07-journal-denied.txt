@@ -1,0 +1,14 @@
+Oct 18 22:41:27 localhost.localdomain sshd-session[3341]: Accepted publickey for admin from 192.0.2.1 port 64893 ssh2: ED25519 SHA256:<fingerprint>
+Oct 18 22:41:27 localhost.localdomain sshd-session[3341]: pam_unix(sshd:session): session opened for user admin(uid=1000) by admin(uid=0)
+Oct 18 22:45:20 localhost.localdomain systemd[1]: Reloading sshd.service - OpenSSH server daemon...
+Oct 18 22:45:20 localhost.localdomain sshd[844]: Received SIGHUP; restarting.
+Oct 18 22:45:20 localhost.localdomain sshd[844]: Server listening on 0.0.0.0 port 22.
+Oct 18 22:45:20 localhost.localdomain systemd[1]: Reloaded sshd.service - OpenSSH server daemon.
+Oct 18 22:45:20 localhost.localdomain sshd[844]: Server listening on :: port 22.
+Oct 18 22:46:14 localhost.localdomain sshd-session[3423]: Accepted publickey for admin from 192.0.2.1 port 58112 ssh2: ED25519 SHA256:<fingerprint>
+Oct 18 22:46:14 localhost.localdomain sshd-session[3423]: pam_unix(sshd:session): session opened for user admin(uid=1000) by admin(uid=0)
+Oct 18 22:46:14 localhost.localdomain sshd-session[3423]: pam_unix(sshd:session): session closed for user admin
+Oct 18 22:46:28 localhost.localdomain sshd-session[3451]: Connection reset by authenticating user admin 192.0.2.1 port 58125 [preauth]
+Oct 18 22:46:50 localhost.localdomain sshd-session[3453]: User root from 192.0.2.1 not allowed because not listed in AllowUsers
+Oct 18 22:46:50 localhost.localdomain sshd-session[3453]: Connection reset by invalid user root 192.0.2.1 port 58137 [preauth]
+Oct 18 22:50:43 localhost.localdomain sshd-session[3478]: Connection reset by authenticating user admin 192.0.2.1 port 63058 [preauth]

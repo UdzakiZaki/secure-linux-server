@@ -1,0 +1,3 @@
+$ sudo firewall-cmd --permanent --zone=public --get-target
+default
+[exit code: 0]

@@ -1,0 +1,1 @@
+unconfined_u:object_r:httpd_sys_content_t:s0 index.html

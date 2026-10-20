@@ -1,0 +1,43 @@
+Сохранены относящиеся к диагностике фрагменты; многоточие в сообщении Nginx
+обозначает пропуск технических идентификаторов.
+
+Метка до исправления:
+ls -Z /srv/site
+unconfined_u:object_r:var_t:s0 index.html
+
+Локальный HTTP-запрос до исправления:
+curl -I http://localhost
+HTTP/1.1 403 Forbidden
+
+Диагностика Nginx:
+sudo tail -n 5 /var/log/nginx/error.log
+2026/10/18 19:15:08 [error] ... "/srv/site/index.html" is forbidden (13: Permission denied), client: ::1, server: _, request: "HEAD / HTTP/1.1", host: "localhost"
+
+Диагностика SELinux:
+sudo ausearch -m avc -ts recent
+time->Sun Oct 18 19:15:08 2026
+
+Поля записи type=AVC msg=audit(1792340108.500:141):
+avc: denied { getattr }
+comm="nginx"
+path="/srv/site/index.html"
+scontext=system_u:system_r:httpd_t:s0
+tcontext=unconfined_u:object_r:var_t:s0
+tclass=file
+permissive=0
+
+Постоянное правило добавлено через semanage fcontext.
+Правило сохранено отдельно в selinux-02-local-rules.txt.
+
+Применение меток:
+sudo restorecon -Rv /srv/site
+Relabeled /srv/site from unconfined_u:object_r:var_t:s0 to unconfined_u:object_r:httpd_sys_content_t:s0
+Relabeled /srv/site/index.html from unconfined_u:object_r:var_t:s0 to unconfined_u:object_r:httpd_sys_content_t:s0
+
+Метка после исправления:
+ls -Z /srv/site
+unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+
+Повторный локальный HTTP-запрос:
+curl -I http://localhost
+HTTP/1.1 200 OK

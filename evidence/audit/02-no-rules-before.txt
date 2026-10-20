@@ -1,0 +1,3 @@
+$ sudo auditctl -l
+No rules
+[exit code: 0]

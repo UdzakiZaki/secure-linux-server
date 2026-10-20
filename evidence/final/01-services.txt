@@ -1,0 +1,6 @@
+$ bash -c for s in nginx firewalld auditd sshd; do echo -n "$s: "; systemctl is-enabled $s | tr "\n" " "; systemctl is-active $s; done
+nginx: enabled active
+firewalld: enabled active
+auditd: enabled active
+sshd: enabled active
+[exit code: 0]

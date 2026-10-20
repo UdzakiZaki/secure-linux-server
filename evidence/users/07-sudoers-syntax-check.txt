@@ -1,0 +1,3 @@
+$ sudo visudo -cf /tmp/deploy-sudoers
+/tmp/deploy-sudoers: parsed OK
+[exit code: 0]

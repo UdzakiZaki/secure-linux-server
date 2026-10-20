@@ -1,0 +1,9 @@
+$ sudo aureport -k -i
+
+Key Report
+===============================================
+# date time key success exe auid event
+===============================================
+1. 10/18/2026 23:31:21 nginx_config yes /usr/sbin/auditctl admin 767
+2. 10/18/2026 23:32:39 nginx_config yes /usr/bin/tee admin 780
+[exit code: 0]

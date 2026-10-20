@@ -1,0 +1,3 @@
+$ sudo -u nobody cat /srv/site/index.html
+cat: /srv/site/index.html: Permission denied
+[exit code: 1]

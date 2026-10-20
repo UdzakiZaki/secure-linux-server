@@ -1,0 +1,4 @@
+$ sudo ls -lZd /srv/site /srv/site/index.html
+drwxr-x---. 2 deploy nginx unconfined_u:object_r:httpd_sys_content_t:s0 24 Oct 18 19:06 /srv/site
+-rw-r-----. 1 deploy nginx unconfined_u:object_r:httpd_sys_content_t:s0 19 Oct 18 19:06 /srv/site/index.html
+[exit code: 0]

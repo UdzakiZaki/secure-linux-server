@@ -1,0 +1,8 @@
+
+
+ComputerName     : 192.0.2.10
+RemotePort       : 22
+TcpTestSucceeded : True
+
+
+

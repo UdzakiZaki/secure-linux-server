@@ -1,0 +1,4 @@
+$ ls -lZd /home/admin/.ssh /home/admin/.ssh/authorized_keys
+drwx------. 2 admin admin unconfined_u:object_r:ssh_home_t:s0 29 Oct 18 22:38 /home/admin/.ssh
+-rw-------. 1 admin admin unconfined_u:object_r:ssh_home_t:s0 92 Oct 18 22:38 /home/admin/.ssh/authorized_keys
+[exit code: 0]

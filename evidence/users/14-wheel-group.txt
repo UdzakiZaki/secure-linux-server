@@ -1,0 +1,3 @@
+$ getent group wheel
+wheel:x:10:admin
+[exit code: 0]

@@ -1,0 +1,3 @@
+$ systemctl is-active nginx
+active
+[exit code: 0]

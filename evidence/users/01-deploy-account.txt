@@ -1,0 +1,3 @@
+$ id deploy
+uid=1001(deploy) gid=1001(deploy) groups=1001(deploy)
+[exit code: 0]

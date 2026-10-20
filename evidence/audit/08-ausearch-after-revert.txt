@@ -1,0 +1,36 @@
+$ sudo ausearch -k nginx_config -i -ts recent
+----
+type=PROCTITLE msg=audit(10/18/2026 23:31:21.694:767) : proctitle=/usr/sbin/auditctl -R /etc/audit/audit.rules 
+type=SYSCALL msg=audit(10/18/2026 23:31:21.694:767) : arch=x86_64 syscall=sendto success=yes exit=1080 a0=0x3 a1=0x7ffe0efaf750 a2=0x438 a3=0x0 items=0 ppid=3950 pid=3968 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=auditctl exe=/usr/sbin/auditctl subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=(null) 
+type=CONFIG_CHANGE msg=audit(10/18/2026 23:31:21.694:767) : auid=admin ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 op=add_rule key=nginx_config list=exit res=yes 
+----
+type=PROCTITLE msg=audit(10/18/2026 23:32:39.322:780) : proctitle=tee -a /etc/nginx/nginx.conf 
+type=PATH msg=audit(10/18/2026 23:32:39.322:780) : item=0 name=/etc/nginx/nginx.conf inode=17319861 dev=fd:00 mode=file,644 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(10/18/2026 23:32:39.322:780) : cwd=/home/admin 
+type=SYSCALL msg=audit(10/18/2026 23:32:39.322:780) : arch=x86_64 syscall=openat success=yes exit=3 a0=AT_FDCWD a1=0x7fff3ce8972a a2=O_WRONLY|O_CREAT|O_APPEND a3=0x1b6 items=1 ppid=3988 pid=3989 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=tee exe=/usr/bin/tee subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=nginx_config 
+----
+type=PROCTITLE msg=audit(10/18/2026 23:33:47.996:805) : proctitle=sed -i /^# audit test$/d /etc/nginx/nginx.conf 
+type=PATH msg=audit(10/18/2026 23:33:47.996:805) : item=1 name=/etc/nginx/sedpqX6Gy inode=17238990 dev=fd:00 mode=file,600 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(10/18/2026 23:33:47.996:805) : item=0 name=/etc/nginx/ inode=17271831 dev=fd:00 mode=dir,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(10/18/2026 23:33:47.996:805) : cwd=/home/admin 
+type=SYSCALL msg=audit(10/18/2026 23:33:47.996:805) : arch=x86_64 syscall=openat success=yes exit=4 a0=AT_FDCWD a1=0x55bfdccf3ac0 a2=O_RDWR|O_CREAT|O_EXCL a3=0x180 items=2 ppid=4020 pid=4021 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=sed exe=/usr/bin/sed subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=nginx_config 
+----
+type=PROCTITLE msg=audit(10/18/2026 23:33:47.999:806) : proctitle=sed -i /^# audit test$/d /etc/nginx/nginx.conf 
+type=PATH msg=audit(10/18/2026 23:33:47.999:806) : item=0 name=(null) inode=17238990 dev=fd:00 mode=file,600 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(10/18/2026 23:33:47.999:806) : cwd=/home/admin 
+type=SYSCALL msg=audit(10/18/2026 23:33:47.999:806) : arch=x86_64 syscall=fchown success=yes exit=0 a0=0x4 a1=0x0 a2=0x0 a3=0x55bfdcce9010 items=1 ppid=4020 pid=4021 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=sed exe=/usr/bin/sed subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=nginx_config 
+----
+type=PROCTITLE msg=audit(10/18/2026 23:33:47.999:807) : proctitle=sed -i /^# audit test$/d /etc/nginx/nginx.conf 
+type=PATH msg=audit(10/18/2026 23:33:47.999:807) : item=0 name=(null) inode=17238990 dev=fd:00 mode=file,600 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(10/18/2026 23:33:47.999:807) : cwd=/home/admin 
+type=SYSCALL msg=audit(10/18/2026 23:33:47.999:807) : arch=x86_64 syscall=fsetxattr success=yes exit=0 a0=0x4 a1=0x7f184657b086 a2=0x55bfdcd04c00 a3=0x1c items=1 ppid=4020 pid=4021 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=sed exe=/usr/bin/sed subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=nginx_config 
+----
+type=PROCTITLE msg=audit(10/18/2026 23:33:47.999:808) : proctitle=sed -i /^# audit test$/d /etc/nginx/nginx.conf 
+type=PATH msg=audit(10/18/2026 23:33:47.999:808) : item=4 name=/etc/nginx/nginx.conf inode=17238990 dev=fd:00 mode=file,644 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(10/18/2026 23:33:47.999:808) : item=3 name=/etc/nginx/nginx.conf inode=17319861 dev=fd:00 mode=file,644 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(10/18/2026 23:33:47.999:808) : item=2 name=/etc/nginx/sedpqX6Gy inode=17238990 dev=fd:00 mode=file,644 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(10/18/2026 23:33:47.999:808) : item=1 name=/etc/nginx/ inode=17271831 dev=fd:00 mode=dir,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(10/18/2026 23:33:47.999:808) : item=0 name=/etc/nginx/ inode=17271831 dev=fd:00 mode=dir,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:httpd_config_t:s0 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(10/18/2026 23:33:47.999:808) : cwd=/home/admin 
+type=SYSCALL msg=audit(10/18/2026 23:33:47.999:808) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x55bfdccf3ac0 a1=0x7ffd9925e718 a2=0x55ba8732f7f3 a3=0x55bfdcce9010 items=5 ppid=4020 pid=4021 auid=admin uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts2 ses=10 comm=sed exe=/usr/bin/sed subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=nginx_config 
+[exit code: 0]

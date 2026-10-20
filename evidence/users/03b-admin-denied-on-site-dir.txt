@@ -1,0 +1,4 @@
+$ ls -lZd /srv/site /srv/site/index.html
+ls: cannot access '/srv/site/index.html': Permission denied
+drwxr-x---. 2 deploy nginx unconfined_u:object_r:httpd_sys_content_t:s0 24 Oct 18 19:06 /srv/site
+[exit code: 2]

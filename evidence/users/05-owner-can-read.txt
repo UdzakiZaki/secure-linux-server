@@ -1,0 +1,3 @@
+$ sudo -u deploy cat /srv/site/index.html
+<h1>Test site</h1>
+[exit code: 0]
